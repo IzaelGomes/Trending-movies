@@ -98,8 +98,8 @@ function removeMovieFromLocalStorage(id){
  //função que verifica o clique na imagem para favoritar o filme
  function favoriteButtonPressed(event, movie){
   const favoriteState = {
-    favorited: 'assets/full-heart.svg',
-    notFavorited: 'assets/Heart.svg'
+    favorited: '../assets/full-heart.svg',
+    notFavorited: '../assets/Heart.svg'
   }
   //verifica se a imagem esta como notfavorited e adiciona a outra imagem
   if(event.target.src.includes(favoriteState.notFavorited)){
