@@ -16,10 +16,9 @@ async function getpopularMovies(){
   let req = await fetch(`https://api.themoviedb.org/3/trending/all/day?api_key=${key}`)
   let filme = await req.json()
   let  movies =  filme.results
-       console.log(movies)
+       
        movies.forEach(movieListShow =>{
-           createElementsMovies(movieListShow)
-           
+           createElementsMovies(movieListShow) 
        })
       
   }
@@ -117,7 +116,6 @@ function removeMovieFromLocalStorage(id){
    function checkMovieIsFavorite(id){
     const movies = getFavoriteMovies() || []
     return movies.find(movie => movie.id == id)
-    
   }
 
        function createElementsMovies(movie){
@@ -138,6 +136,7 @@ function removeMovieFromLocalStorage(id){
         const  spanRate = document.createElement('span')
         const spanFavorite = document.createElement('span')
         const description = document.createElement('div')
+        const p = document.createElement('p')
         
         containerFilme.classList.add('container-filmes')
         movieList.classList.add('movies-list')
@@ -147,6 +146,7 @@ function removeMovieFromLocalStorage(id){
         icones.classList.add('icones')
         rate.classList.add('star')
         favorite.classList.add('heart')
+        
         // Dependendo do retorno a imagem será trocada
         favorite.src = isfavorite ? 'assets/full-heart.svg' : 'assets/Heart.svg' 
 
@@ -161,12 +161,13 @@ function removeMovieFromLocalStorage(id){
         img.src =  imagem
 
         movieName.textContent = `${movie.title} (${movie.release_date})`
-        description.textContent = movie.overview 
+        p.textContent = movie.overview 
         
         main.appendChild(containerFilme)
         containerFilme.appendChild(movieList)
         movieList.appendChild(movieInformation)
         movieList.appendChild(description)
+        description.appendChild(p)
         movieInformation.appendChild(img)
         movieInformation.appendChild(movieTitle)
         movieTitle.appendChild(movieName)

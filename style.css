@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;800&family=Rubik+Distressed&display=swap');
+
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: Poppins;
 }
 
 body{
@@ -20,9 +24,8 @@ h1{
     margin-bottom: 1rem;
     border-radius: 10px;
     border: none;
-  color: #fff;
+    color: #fff;
     background-color: rgb(26, 25, 41);
-
 }
 
 .fav-movies{
@@ -36,9 +39,7 @@ h1{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    align-items: center;
-    
-    
+    align-items: center;  
 }
 
 .container-filmes{
@@ -53,46 +54,40 @@ h1{
 .movies-list{
     width: 100%;
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     padding: 2rem;
     margin-top: 1rem;
     background: rgba(29, 28, 59, 1);
     box-shadow: 2px 2px 2px black;
-    
 }
+
 
 .movie-information{
     display: flex;
     align-items: center;
-    gap: 10%;
-    
-    
+    gap: 10%; 
 }
 
 .movie-title h2{
   font-size: 1rem;  
 }
 
-.movie-title{
-    
+.movie-title{ 
     width: 300px;
-
 }
 
 .movie-description{
     margin-left: 2rem;
     width: 60%;
-   
 }
 
 .icones{
     padding-top: 1rem;
-    
 }
 
 .icones span{
     padding: 0.7rem;
-    
 }
 
 .icones img{
@@ -101,8 +96,53 @@ h1{
 }
 
 .movie-img{
-  width: 200px;
-  border-radius: 60px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
     
+}
+
+
+@media(max-width:1123px){
+    .movie-description p{
+        font-size: 13px;
+    }
+
+    .movie-title h2{
+        font-size: 10px;
+    }
+}
+
+@media(max-width:1000px){
+    .movies-list{
+        flex-direction: column;
+    }
+
+    .movie-title h2{
+        text-align: center;
+   
+    }
+    .movie-information{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    .movie-description p{
+        padding-top: 1rem;
+        text-align: center;
+        max-width: 420px;
+    }
+
+    .icones{
+        text-align: center;
+    }
+}
+
+@media(max-width:486px){
+    .movie-description p{
+        font-size: 10px;
+    }
 }
 
