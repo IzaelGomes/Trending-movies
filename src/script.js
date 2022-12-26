@@ -73,8 +73,8 @@ function getFavoriteMovies() {
 //função que irá salvar filmes
 function saveToLocalStorage(movie){
   const movies =  getFavoriteMovies() || []
-  movies.push(movie) // transforma o json em texto para ser salvo no localStore
-   movieJson = JSON.stringify(movies)
+  movies.push(movie) 
+   movieJson = JSON.stringify(movies)// transforma o json em texto para ser salvo no localStore
   localStorage.setItem('favoriteMovies', movieJson )
 
 }
@@ -148,7 +148,7 @@ function removeMovieFromLocalStorage(id){
         favorite.classList.add('heart')
         
         // Dependendo do retorno a imagem será trocada
-        favorite.src = isfavorite ? 'assets/full-heart.svg' : 'assets/Heart.svg' 
+        favorite.src = isfavorite ? '../assets/full-heart.svg' : '../assets/Heart.svg' 
 
         //É passado um evento de click para a imagem, onde será realizado a troca de imagem 
         favorite.addEventListener('click', (event)=> favoriteButtonPressed(event, movie))
@@ -157,7 +157,7 @@ function removeMovieFromLocalStorage(id){
         spanFavorite.classList.add('span-favorite')
         description.classList.add('movie-description')
         
-        rate.setAttribute('src', 'assets/Star.svg')
+        rate.setAttribute('src', '../assets/Star.svg')
         img.src =  imagem
 
         movieName.textContent = `${movie.title} (${movie.release_date})`
